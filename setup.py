@@ -6,7 +6,7 @@ from distutils.core import setup
 setup(
     name='drawsomething',
     version='0.1.0',
-    description='Drawsomething words guess helper.',
+    description='Drawsomething word guess helper.',
     author='Lx Yu',
     author_email='lixinfish@gmail.com',
     packages=['drawsomething', ],
