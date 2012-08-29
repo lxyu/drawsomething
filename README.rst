@@ -27,7 +27,7 @@ As pyenchant is only a python binding for enchant, we need to install enchant fi
 Usage
 -----
 
-One line script to generate all possible words.
+One line script to generate all possible words:
 
 ::
 
@@ -36,11 +36,22 @@ One line script to generate all possible words.
     ['ttys', 'sexy', 'yest', 'text', 'sett', 'zest', 'stet', 'test']
 
 
-The `example.py` is an simple script to list all possible words with translations.
+To list words with translations:
 
 ::
 
-    $ python example.py -l 4 -c esttxyz
+    >>> import drawsomething
+    >>> words = drawsomething.get_words('esttxyz', 4)
+    >>> for w in words:
+    >>>     trans = drawsomething.translate(w, 'zh_cn').lower()
+    >>>     print w, trans
+
+
+The `drawsth` is a cli script to list all possible words:
+
+::
+
+    $ drawsth -l 4 -c esttxyz
     ttys ttys中
     sexy 性感
     yest
