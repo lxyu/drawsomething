@@ -52,11 +52,11 @@ The `drawsth` is a cli script to list all possible words:
 ::
 
     $ drawsth -l 4 -c esttxyz
-    ttys ttys中
-    sexy 性感
+    ttys
+    sexy
     yest
-    text 文本
+    text
     sett
-    zest 热情
+    zest
     stet
-    test 测试
+    test
