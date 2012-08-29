@@ -1,10 +1,12 @@
-#!/usr/bin/python2.7
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import argparse
 
 from drawsomething import get_words
 from drawsomething import translate
+
+TRANSLATE_TO = 'zh_cn'
 
 
 def main():
@@ -19,7 +21,7 @@ def main():
 
     words = get_words(args.chars, args.length)
     for w in words:
-        trans = translate(w, 'zh_cn').lower()
+        trans = translate(w, TRANSLATE_TO).lower()
         if w != trans:
             print w, trans
         else:
