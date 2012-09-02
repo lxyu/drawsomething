@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Drawsomething by lxyu</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Drawsomething</h1>
+        <p>Help you guess drawsomething words by brute force all permutations. t</p>
+
+        <p class="view"><a href="https://github.com/lxyu/drawsomething">View the Project on GitHub <small>lxyu/drawsomething</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/lxyu/drawsomething/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/lxyu/drawsomething/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/lxyu/drawsomething">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Drawsomething</h1>
+
+<p>Help you guess drawsomething words by brute force all permutations.</p>
+
+<h2>Depends</h2>
+
+<ul>
+<li>pyenchant</li>
+<li>google-translate</li>
+</ul><h2>Install Guide</h2>
+
+<p>Take OS X for example.</p>
+
+<p>Drawsomething depends on enchant to do spell checking.</p>
+
+<p>As pyenchant is only a python binding for enchant, we need to install enchant first. And we also need to install aspell with en dict because enchant use aspell as backend.</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>brew install aspell --lang<span class="o">=</span>en
+<span class="nv">$ </span>brew install enchant
+<span class="nv">$ </span>pip install pyenchant google-translate
+</pre></div>
+
+<h2>Usage</h2>
+
+<p>One line script to generate all possible words:</p>
+
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">drawsomething</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">drawsomething</span><span class="o">.</span><span class="n">get_words</span><span class="p">(</span><span class="s">'esttxyz'</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="p">[</span><span class="s">'ttys'</span><span class="p">,</span> <span class="s">'sexy'</span><span class="p">,</span> <span class="s">'yest'</span><span class="p">,</span> <span class="s">'text'</span><span class="p">,</span> <span class="s">'sett'</span><span class="p">,</span> <span class="s">'zest'</span><span class="p">,</span> <span class="s">'stet'</span><span class="p">,</span> <span class="s">'test'</span><span class="p">]</span>
+</pre></div>
+
+<p>To list words with translations:</p>
+
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">drawsomething</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="n">drawsomething</span><span class="o">.</span><span class="n">get_words</span><span class="p">(</span><span class="s">'esttxyz'</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="n">trans</span> <span class="o">=</span> <span class="n">drawsomething</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">'zh_cn'</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">print</span> <span class="n">w</span><span class="p">,</span> <span class="n">trans</span>
+</pre></div>
+
+<p>The <code>drawsth</code> is a cli script to list all possible words:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>drawsth -l 4 -c esttxyz
+ttys
+sexy
+yest
+text
+sett
+zest
+stet
+<span class="nb">test</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lxyu">lxyu</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
